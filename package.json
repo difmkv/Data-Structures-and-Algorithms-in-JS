@@ -1,0 +1,48 @@
+{
+  "name": "data-structures-algorithms-js",
+  "version": "1.0.0",
+  "description": "Data Structures Algorithms JS",
+  "author": "Diana Fdl <dianafdl@pm.me>",
+  "main": "src/index.html",
+  "license": "",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "build": "parcel build src/index.html --public-url ./",
+    "dev": "parcel src/index.html",
+    "clear-build-cache": "rm -rf .cache/ dist/",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,css, *.test.js}\"",
+    "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,css}\"",
+    "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js}\"",
+    "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js}\"",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.1.0",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^2.0.5"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "repository": {
+    "type": "git"
+  },
+  "resolutions": {
+    "node-forge": "^0.10.0"
+  }
+}
