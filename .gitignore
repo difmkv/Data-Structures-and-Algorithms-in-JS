@@ -6,3 +6,4 @@ dist/
 coverage/
 .vscode/
 lib/
+.parcel-cache

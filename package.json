@@ -3,30 +3,33 @@
   "version": "1.0.0",
   "description": "Data Structures Algorithms JS",
   "author": "Diana Fdl <dianafdl@pm.me>",
-  "main": "src/index.html",
-  "license": "",
+  "license": "MIT",
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
-    "build": "parcel build src/index.html --public-url ./",
+    "build": "rm -rf dist && parcel build src/index.html --public-url ./",
     "dev": "parcel src/index.html",
     "clear-build-cache": "rm -rf .cache/ dist/",
-    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,css, *.test.js}\"",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,css,*.test.js}\"",
     "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,css}\"",
-    "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js}\"",
-    "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js}\"",
+    "lint": "eslint --ignore-path ./.gitignore --fix ./**/*.js",
+    "lint:check": "eslint --ignore-path ./.gitignore --quiet ./**/*.js",
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
-    "eslint": "^7.5.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "jest": "^26.1.0",
-    "parcel-bundler": "^1.12.5",
-    "prettier": "^2.0.5"
+    "@babel/core": "^7.24.5",
+    "@babel/plugin-transform-optional-chaining": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0",
+    "parcel": "^2.11.0",
+    "prettier": "^3.2.5"
   },
   "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "coverageReporters": [
@@ -41,9 +44,7 @@
     "last 2 Chrome versions"
   ],
   "repository": {
-    "type": "git"
-  },
-  "resolutions": {
-    "node-forge": "^0.10.0"
+    "type": "git",
+    "url": "https://github.com/difmkv/Data-Structures-and-Algorithms-in-JS"
   }
 }
